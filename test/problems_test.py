@@ -1,5 +1,5 @@
 import unittest
-from problems import fizzbuzz, reduce_number_to_zero
+from problems import fizzbuzz, reduce_number_to_zero, ransom_note
 
 
 class TestStringMethods(unittest.TestCase):
@@ -16,6 +16,12 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(check.number_of_steps(num=14), 6)
         self.assertEqual(check.number_of_steps(num=8), 4)
         self.assertEqual(check.number_of_steps(num=123), 12)
+
+    def test_ransom_note(self):
+        check = ransom_note.Solution()
+        self.assertFalse(check.can_construct('a', 'b'))
+        self.assertFalse(check.can_construct('aa', 'ab'))
+        self.assertTrue(check.can_construct('aa', 'aab'))
 
 
 if __name__ == "__main__":
