@@ -1,5 +1,5 @@
 import unittest
-from problems import fizzbuzz
+from problems import fizzbuzz, reduce_number_to_zero
 
 
 class TestStringMethods(unittest.TestCase):
@@ -10,6 +10,12 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(check.fizzbuzz(n=15),
                          ['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14',
                           'FizzBuzz'])
+
+    def test_reduce_number_to_zero(self):
+        check = reduce_number_to_zero.Solution()
+        self.assertEqual(check.number_of_steps(num=14), 6)
+        self.assertEqual(check.number_of_steps(num=8), 4)
+        self.assertEqual(check.number_of_steps(num=123), 12)
 
 
 if __name__ == "__main__":
